@@ -1,0 +1,44 @@
+{
+  "name": "dsh-document-tools",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "backend",
+    "scripts",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "SHARED-SOURCES.json",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.4",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": "^0.2.0-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "pack:check": "npm pack --dry-run --ignore-scripts"
+  },
+  "description": "独立的 read_document：支持当前原生上传和本地路径，返回分页文本与真实图片。PDF/图片、DOCX、PPTX、XLSX、文本代码及可选工程交换格式；专有二进制格式仍需厂商导出。扫描 PDF 返回页面像素供视觉模型阅读，不包含独立 OCR，也不保证任意格式都能读懂。PPTX 是文本、备注和嵌入图，完整布局请导出 PDF。"
+}
