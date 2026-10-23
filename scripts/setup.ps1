@@ -1,4 +1,4 @@
-param([string]$Runtime=(Join-Path $env:USERPROFILE '.local-ai-tools\document-tools'),[switch]$Engineering)
+﻿param([string]$Runtime=(Join-Path $env:USERPROFILE '.local-ai-tools\document-tools'),[switch]$Engineering)
 $ErrorActionPreference='Stop'
 $pythonPath=Join-Path $Runtime 'Scripts\python.exe'
 if(!(Test-Path -LiteralPath $pythonPath)){& uv venv --python 3.12 $Runtime;if($LASTEXITCODE -ne 0){throw '独立 Python 环境创建失败'}}

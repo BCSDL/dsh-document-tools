@@ -1,3 +1,5 @@
+> Windows installer fix 0.1.1: PowerShell scripts include an explicit UTF-8 BOM for Windows PowerShell 5.1 and PowerShell 7. Plugin runtime behavior is unchanged.
+
 # dsh-document-tools
 
 独立的 read_document：支持当前原生上传和本地路径，返回分页文本与真实图片。PDF/图片、DOCX、PPTX、XLSX、文本代码及可选工程交换格式；专有二进制格式仍需厂商导出。扫描 PDF 返回页面像素供视觉模型阅读，不包含独立 OCR，也不保证任意格式都能读懂。PPTX 是文本、备注和嵌入图，完整布局请导出 PDF。

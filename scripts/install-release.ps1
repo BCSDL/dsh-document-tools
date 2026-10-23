@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][ValidatePattern('^[a-f0-9]{40}$')][string]$Commit,[ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$Profile='web')
+﻿param([Parameter(Mandatory=$true)][ValidatePattern('^[a-f0-9]{40}$')][string]$Commit,[ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$Profile='web')
 $ErrorActionPreference='Stop'
 $taskDshRoot=if($env:DSH_HOME){$env:DSH_HOME}else{Join-Path $env:USERPROFILE '.dsh'}
 $profilePath=Join-Path $taskDshRoot ('profiles\'+$Profile)
